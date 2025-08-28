@@ -1,0 +1,36 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.dll
+*.o
+*.out
+
+# Jupyter/VS Code checkpoints
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build / packaging
+*.egg-info/
+dist/
+build/
+
+# Logs
+*.log
+
+# Optional: ignore plots if you don’t want every PNG
+# comment this out if you want plots tracked!
+# experiments/img/*.png
