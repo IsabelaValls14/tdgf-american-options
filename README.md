@@ -27,21 +27,14 @@ python3 experiments/bs1d_euro_quickstart.py
 ```
 
 
-## Repo Structure
+## Results
 
-tdgf-american-options/
-├─ models/black_scholes.py (exact GBM step)
-├─ payoffs.py (call/put intrinsic payoffs)
-├─ baseline_mc/
-│ ├─ mc_european.py (European MC pricer)
-│ └─ longstaff_schwartz.py (American LS pricer)
-├─ tDGF/
-│ ├─ model.py (payoff-preserving MLP: tanh + softplus skip)
-│ ├─ operators.py (BS coefficients A(S)=½σ²S², b(S))
-│ ├─ loss.py (TDGF energy; proximity + gradient energy + r term)
-│ ├─ trainer.py (time-stepping loop; warm-start + prev-step mask)
-│ └─ sampling.py (S samplers over moneyness)
-└─ experiments/
-├─ bs1d_euro_quickstart.py (Phase 1: MC vs Black–Scholes)
-├─ bs1d_american_ls.py (Phase 2: LS vs European; saves plot)
-└─ bs1d_tdgf_demo.py (Phase 3: TDGF vs LS; saves plot)
+The experiments produce plots saved under `experiments/img/`.
+
+### Phase 2 — European vs American Put
+Comparison between Black–Scholes closed form, Monte Carlo, and Longstaff–Schwartz baseline.  
+![European vs American Put](experiments/img/ls_vs_euro.png)
+
+### Phase 3 — TDGF vs Longstaff–Schwartz
+Comparison between neural solver (TDGF) and Monte Carlo regression baseline.  
+![TDGF vs LS](experiments/img/tdgf_vs_ls.png)
